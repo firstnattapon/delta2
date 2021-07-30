@@ -14,7 +14,7 @@ plt.style.use('ggplot')
 from stqdm import stqdm
 
 class  delta :
-    def __init__(self , usd = 1000 , fix_value = 0.50, p_data = 'CAKE-PERP', timeframe = '15m'  , max  = 1439  
+    def __init__(self , usd = 1000 , fix_value = 0.50, p_data = 'CAKE-PERP', timeframe = '15m'  , max  = 1535  
                  , limit  = 5000 , series_num = None , minimum_re = 0.005 , start_end = [182 , 196] , mode = 'mode2'):
         self.usd        = usd
         self.fix_value  = fix_value
@@ -149,7 +149,7 @@ col2 , col3 , col4 , col5  , col6 = st.beta_columns(5)
 fix_value = float(col2.text_input("fix_value", "0.5" ))
 invest =  int(col3.text_input("invest" , "1000"))
 timeframe = col4.text_input("timeframe", "15m")
-max = int(col5.text_input("max" , "1439"))
+max = int(col5.text_input("max" , "1535"))
 minimum_re = float(col6.text_input("minimum_re" , "0.005"))
 
 col7, col8 , col9   = st.beta_columns(3)
