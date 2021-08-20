@@ -153,7 +153,7 @@ max = int(col5.text_input("max" , "1535"))
 minimum_re = float(col6.text_input("minimum_re" , "0.005"))
 
 col7, col8 , col9   = st.beta_columns(3)
-pair_data = col7.selectbox('pair_data', pair_x , 36 ) 
+pair_data = col7.selectbox('pair_data', pair_x , 36 )
 start = col8.date_input('start' , datetime.date(2021,8,17 ; start = int(start.timetuple().tm_yday) #; st.sidebar.write(start)
 end = col9.date_input('end', datetime.date(2021,8,31) ; end =  int(end.timetuple().tm_yday) #; st.sidebar.write(end)
 
