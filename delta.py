@@ -153,9 +153,9 @@ max = int(col5.text_input("max" , "1535"))
 minimum_re = float(col6.text_input("minimum_re" , "0.005"))
 
 col7, col8 , col9   = st.beta_columns(3)
-pair_data = col7.selectbox('pair_data', pair_x , 5 )    
-start = col8.date_input('start' , datetime.date(2021,8,1)) ; start = int(start.timetuple().tm_yday) #; st.sidebar.write(start)
-end = col9.date_input('end', datetime.date(2021,8,15)) ; end =  int(end.timetuple().tm_yday) #; st.sidebar.write(end)
+pair_data = col7.selectbox('pair_data', pair_x , 36 ) 
+start = col8.date_input('start' , datetime.date(2021,8,17 ; start = int(start.timetuple().tm_yday) #; st.sidebar.write(start)
+end = col9.date_input('end', datetime.date(2021,8,31) ; end =  int(end.timetuple().tm_yday) #; st.sidebar.write(end)
 
 col10 , col11 = st.beta_columns(2)
 with col10.beta_expander("Feigenbaum "):
@@ -165,9 +165,9 @@ with col10.beta_expander("Feigenbaum "):
         mode = 'mode1'
         y = None
     else:
-        d_λ =  float(st.text_input("λ" , "3.99 "))
-        d_X0 =  float(st.text_input("X0" , "0.15"))
-        d_N =  int(st.text_input("N" , "300"))
+        d_λ =  float(st.text_input("λ" , "4.0"))
+        d_X0 =  float(st.text_input("X0" , "0.13"))
+        d_N =  int(st.text_input("N" , "200"))
         λ = st.slider('λ', min_value=0.0 , max_value=4.0 , value= d_λ  , format="%.3f" )
         X0 = st.slider('X0', min_value=0.0 , max_value=1.0 , value=d_X0  , format="%.2f" )    
         N = st.slider('N', min_value=0 , max_value=20000 , value=d_N) 
