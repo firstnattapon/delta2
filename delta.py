@@ -204,7 +204,7 @@ if 1 :
     elif options == 'amount_hold vs amount_mkt':plot = ['amount' ,'amount_mkt']
     elif options == 'asset-value_hold vs asset-value_mkt':plot = ['asset_value' ,'assetvalue_mkt']
     elif options == 'cash_hold vs cash_mkt':plot = ['cash' ,'cash_mkt']
-    elif options == 'sumusd_hold vs sumusd_mkt':plot = ['sumusd' ,'sumusd_mkt' , "start_usd"]
+    elif options == 'sumusd_hold vs sumusd_mkt':plot = ['sumusd' ,'sumusd_mkt', 'cf_usd' , "start_usd"]
 
     try: next_re = [i for i in  [i if i > delta_A['index'][-1] else None for i in delta_x.series_num] if i != None][0]
     except IndexError: next_re = None
