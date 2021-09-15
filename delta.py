@@ -219,6 +219,9 @@ if 1 :
     plt.subplots(figsize=(12, 8))
     
     for i in plot:
+        if i == 'cf_usd':
+            delta_A[i] = delta_A[i] + 1000
+            plt.plot(delta_A[i] ,label =i)
         plt.plot(delta_A[i] ,label =i)
    
     data_vl = delta_A[delta_A['index'].isin(delta_x.series_num)] ; vline = data_vl.index
