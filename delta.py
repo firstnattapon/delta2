@@ -145,20 +145,20 @@ def getpair ():
 pair_x = getpair()
 
 #  streamlit
-col2 , col3 , col4 , col5  , col6 = st.beta_columns(5)
+col2 , col3 , col4 , col5  , col6 = st.columns(5)
 fix_value = float(col2.text_input("fix_value", "0.5" ))
 invest =  int(col3.text_input("invest" , "1000"))
 timeframe = col4.text_input("timeframe", "15m")
 max = int(col5.text_input("max" , "1439"))
 minimum_re = float(col6.text_input("minimum_re" , "0.005"))
 
-col7, col8 , col9   = st.beta_columns(3)
+col7, col8 , col9   = st.columns(3)
 pair_data = col7.selectbox('pair_data', pair_x , 36 )
 start = col8.date_input('start' , datetime.date(2021,8, 16 )) ; start = int(start.timetuple().tm_yday) #; st.sidebar.write(start)
 end = col9.date_input('end', datetime.date(2021,8,30 )) ; end =  int(end.timetuple().tm_yday) #; st.sidebar.write(end)
 
-col10 , col11 = st.beta_columns(2)
-with col10.beta_expander("Feigenbaum "):
+col10 , col11 = st.columns(2)
+with col10.expander("Feigenbaum "):
     linear_x = st.checkbox("linear", value = False)
     
     if linear_x :
@@ -186,7 +186,7 @@ if 1 :
                     p_data = pair_data , timeframe =  timeframe , series_num = y , start_end =[start , end] , mode = mode ) 
     delta_A= delta_x.final()
 
-    with col11.beta_expander("expander"):
+    with col11.expander("expander"):
         options  = st.radio('options', 
                             ['cashflow_hold',
                              'rebalancing',
@@ -237,17 +237,17 @@ if 1 :
     st.write('amount :'  , round(delta_A['amount'][-1] , 2) , '   ,   amount_mkt :',  round(delta_A['amount_mkt'][-1] , 2)  )
     st.write('sumusd :'  , round(delta_A['sumusd'][-1] , 2) , '   ,   sumusd_mkt :',  round(delta_A['sumusd_mkt'][-1] , 2)  )
 
-    with st.beta_expander("data"):
-        _, _ , head , _ ,   = st.beta_columns(4) 
+    with st.expander("data"):
+        _, _ , head , _ ,   = st.columns(4) 
         head.write('เริ่ม')
         st.dataframe(delta_A.head(1))
-        _, _ , tail , _ ,   = st.beta_columns(4)
+        _, _ , tail , _ ,   = st.columns(4)
         tail.write('ล่าสุด')
         st.dataframe(delta_A.tail(1))
-        _, _ , re , _ ,   = st.beta_columns(4)
+        _, _ , re , _ ,   = st.columns(4)
         st.dataframe(delta_A[['close', 'perdit'  , 're']].tail(10))
         
-    with st.beta_expander("series_num"):
+    with st.expander("series_num"):
         np.set_printoptions(threshold=sys.maxsize)
         st.code(delta_x.series_num)
         
