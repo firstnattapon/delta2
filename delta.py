@@ -76,6 +76,9 @@ class  delta :
 
         return  dic
    
-st.text_input('p_data')
-st.text_input('timeframe')
-st.text_input('limit')
+
+col1, col2, col3 = st.columns([3, 1, 1])
+
+col1.text_input('p_data')
+col2.text_input('timeframe')
+col3.text_input('limit')
