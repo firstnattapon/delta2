@@ -76,6 +76,6 @@ class  delta :
 
         return  dic
    
-st.p_data('First name')
-st.timeframe('First name')
-st.limit('First name')
+st.text_input('p_data')
+st.text_input('timeframe')
+st.text_input('limit')
