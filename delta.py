@@ -75,10 +75,10 @@ class  delta :
                ,  'cf_change': cf_change , 'cf_usd': cf_usd , 'volume': idv }
 
         return  dic
-   
+
 
 col1, col2, col3 = st.columns([1, 1, 1])
 
 col1.text_input('p_data')
 col2.text_input('timeframe')
-col3.number_input('limit')
+col3.number_input('Pick a number', 1, 2000)
