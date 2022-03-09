@@ -81,4 +81,4 @@ col1, col2, col3 = st.columns([1, 1, 1])
 
 col1.text_input('p_data')
 col2.text_input('timeframe')
-col3.number_input('Pick a number', 1, 2000)
+col3.number_input('limit', 1, 2000)
