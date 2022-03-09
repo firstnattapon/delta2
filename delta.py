@@ -79,6 +79,17 @@ class  delta :
 
 col1, col2, col3 = st.columns([1, 1, 1])
 
-col1.text_input('p_data')
-col2.text_input('timeframe')
-col3.number_input('limit', 1, 2000)
+p_data = col1.text_input('p_data' , 'DOT-PERP')
+timeframe = col2.text_input('timeframe')
+limit =col3.number_input('limit', 1, 2000)
+
+# x =  delta(p_data =  'DOT-PERP' , timeframe = '4h'  , limit  = 1200 )
+# dic  = x.cf()
+# cf = pd.DataFrame(data=dic , index = dic['idx'] )  ; cf = cf.drop(['idx'], axis=1)
+# plt.figure(figsize=(12  , 8))
+# plt.plot(cf[['pv_change']] ,  label="pv_change")
+# plt.plot(cf[['ap_change']] ,  label="ap_change")
+# plt.plot(cf[['cf_change']] ,  label="cf_change")
+# plt.axhline(y=0, color='k', linestyle='--')
+# plt.legend() ; plt.show()
+# cf.tail(1)
