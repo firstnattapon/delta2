@@ -76,4 +76,5 @@ class  delta :
 
         return  dic
    
-D =  st.number_input('Pick a number', 0, 10)
+D =  st.text_input('First name')
+
