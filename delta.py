@@ -93,5 +93,4 @@ plt.plot(cf[['cf_change']] ,  label="cf_change")
 plt.axhline(y=0, color='k', linestyle='--')
 plt.legend()
 st.pyplot(plt)
-
-cf.tail(1)
+st.dataframe(cf.tail(1))
