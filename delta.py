@@ -76,5 +76,5 @@ class  delta :
 
         return  dic
    
-st.text_area('Text to translate')
+st.text_input('First name')
 
