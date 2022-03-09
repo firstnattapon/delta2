@@ -79,11 +79,11 @@ class  delta :
 
 col1, col2, col3 = st.columns([1, 1, 1])
 
-p_data = col1.text_input('p_data' , 'DOT-PERP')
-timeframe = col2.text_input('timeframe' , '4h')
-limit =col3.number_input('limit', 1, 2000 , 1200)
+p_data      = col1.text_input('p_data' , 'DOT-PERP')
+timeframe   = col2.text_input('timeframe' , '4h')
+limit       = col3.number_input('limit', 1, 2000 , 1200)
 
-x =  delta(p_data =  p_data , timeframe = timeframe   , limit  = limit )
+x =  delta( p_data =  p_data , timeframe = timeframe , limit  = limit )
 dic  = x.cf()
 # cf = pd.DataFrame(data=dic , index = dic['idx'] )  ; cf = cf.drop(['idx'], axis=1)
 # plt.figure(figsize=(12  , 8))
