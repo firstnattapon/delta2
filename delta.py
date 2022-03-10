@@ -106,3 +106,4 @@ plt.axhline(y=0, color='k', linestyle='--')
 plt.legend()
 st.pyplot(plt)
 st.dataframe(cf.tail(1).reset_index().drop(['t'], axis=1))
+
