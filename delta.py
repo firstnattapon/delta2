@@ -104,7 +104,7 @@ plt.axhline(y=0, color='k', linestyle='--')
 plt.legend()
 st.pyplot(plt)
 
-col1, col2, col3  = st.columns([1, 1 , 1])
-col2.write(p_data)
+col1, col2, col3  , col4  = st.columns([1, , 1 , 1 , 1])
+col3.write(p_data)
 st.dataframe(cf.tail(1).reset_index().drop(['t'], axis=1))
 
