@@ -103,6 +103,6 @@ plt.plot(cf[['cf_change']] ,  label="cf_change")
 plt.axhline(y=0, color='k', linestyle='--')
 plt.legend()
 st.pyplot(plt)
-st.write(str(mk[mki]))
+st.write(p_data)
 st.dataframe(cf.tail(1).reset_index().drop(['t'], axis=1))
 
