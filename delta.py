@@ -89,7 +89,10 @@ for i   in markets:
         
 col1, col2, col3 = st.columns([1, 1, 1])
 
-p_data  = col1.selectbox('p_data', mk )
+# p_data  = col1.selectbox('p_data', mk )
+
+p_data       = col1.number_input( 'p_data' , 1, 2000 , 1200)
+
 timeframe   = col2.text_input('timeframe' , '4h')
 limit       = col3.number_input('limit', 1, 2000 , 1200)
 
