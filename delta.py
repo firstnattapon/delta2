@@ -87,11 +87,9 @@ for i   in markets:
     if ix[-1] == 'P':
         mk.append(ix)    
         
-col1, col2, col3 , col4 = st.columns([1, 1 , 1 , 1])
+col1, col2, col3  = st.columns([1, 1 , 1])
 
-mki  = col1.number_input( 'p_data', 1 , len(mk) , 1)
-write =  col2.write(str(mk[mki]))
-p_data = mk[mki]
+p_data = mk[col1.number_input( 'p_data', 1 , len(mk) , 1)]
 timeframe   = col3.text_input('timeframe' , '4h')
 limit       = col4.number_input('limit', 1, 2000 , 1200)
 
@@ -105,5 +103,6 @@ plt.plot(cf[['cf_change']] ,  label="cf_change")
 plt.axhline(y=0, color='k', linestyle='--')
 plt.legend()
 st.pyplot(plt)
+st.write(str(mk[mki]))
 st.dataframe(cf.tail(1).reset_index().drop(['t'], axis=1))
 
