@@ -76,10 +76,20 @@ class  delta :
 
         return  dic
 
+#_____________________________
+    
 
+ex = ccxt.ftx({'apiKey': '', 'secret': '', 'enableRateLimit': True})
+markets = ex.fetch_markets() 
+mk = []
+for i   in markets:
+    ix =  i['id']
+    if ix[-1] == 'P':
+        mk.append(ix)    
+        
 col1, col2, col3 = st.columns([1, 1, 1])
 
-p_data      = col1.text_input('p_data' , 'DOT-PERP')
+p_data  = col1.selectbox('p_data', mk )
 timeframe   = col2.text_input('timeframe' , '4h')
 limit       = col3.number_input('limit', 1, 2000 , 1200)
 
