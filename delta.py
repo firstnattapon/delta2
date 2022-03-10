@@ -90,8 +90,8 @@ for i   in markets:
 col1, col2, col3  = st.columns([1, 1 , 1])
 
 p_data = mk[col1.number_input( 'p_data', 1 , len(mk) , 1)]
-timeframe   = col3.text_input('timeframe' , '4h')
-limit       = col4.number_input('limit', 1, 2000 , 1200)
+timeframe   = col2.text_input('timeframe' , '4h')
+limit       = col3.number_input('limit', 1, 2000 , 1200)
 
 x =  delta(p_data = p_data , timeframe = timeframe   , limit  = limit )
 dic  = x.cf()
