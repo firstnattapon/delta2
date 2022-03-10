@@ -90,7 +90,8 @@ for i   in markets:
 col1, col2, col3 , col4 = st.columns([1, 1, 1 , 1])
 
 mki  = col1.number_input(  1 , len(mk) , 1)
-p_data =  col1.write(str(mk[mki]))
+write =  col2.write(str(mk[mki]))
+p_data = mk[mki]
 timeframe   = col3.text_input('timeframe' , '4h')
 limit       = col4.number_input('limit', 1, 2000 , 1200)
 
