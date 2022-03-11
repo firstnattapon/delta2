@@ -146,7 +146,7 @@ p_data = Collateral[col1.number_input( 'p_data', 0 , len(Collateral) , 1)]
 timeframe   = col2.text_input('timeframe' , '4h')
 limit       = col3.number_input('limit', 1, 2000 , 1200)
 
-x =  delta(p_data = p_data , timeframe = timeframe   , limit  = limit )
+x =  delta(p_data = '{}-PERP'.format(p_data) , timeframe = timeframe   , limit  = limit )
 dic  = x.cf()
 cf = pd.DataFrame(data=dic , index = dic['idx'] )  ; cf = cf.drop(['idx'], axis=1)
 plt.figure(figsize=(12  , 8))
