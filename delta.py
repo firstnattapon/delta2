@@ -77,19 +77,72 @@ class  delta :
         return  dic
 
 #_____________________________
-    
 
+Collateral = ['1INCH',
+'AAVE',
+ 'ALPHA',
+ 'AVAX',
+ 'BAND',
+ 'BCH',
+ 'BNB',
+ 'BNT',
+ 'BRZ',
+ 'BTC',
+ 'CEL',
+ 'COMP',
+ 'CUSDT',
+ 'DOGE',
+ 'DOT',
+ 'ETH',
+ 'FIDA',
+ 'FTM',
+ 'FTT',
+ 'GRT',
+ 'HOLY',
+ 'HT',
+ 'KNC',
+ 'LEO',
+ 'LINK',
+ 'LRC',
+ 'LTC',
+ 'MATIC',
+ 'MKR',
+ 'OKB',
+ 'OMG',
+ 'PAXG',
+ 'RAY',
+ 'REN',
+ 'RSR',
+ 'RUNE',
+ 'SECO',
+ 'SNX',
+ 'SOL',
+ 'SRM',
+ 'SUSHI',
+ 'SXP',
+ 'TOMO',
+ 'TRX',
+ 'TRYB',
+ 'UNI',
+ 'USDT',
+ 'UST',
+ 'XAUT',
+ 'XRP',
+ 'YFI',
+ 'ZRX']
+    
 ex = ccxt.ftx({'apiKey': '', 'secret': '', 'enableRateLimit': True})
 markets = ex.fetch_markets() 
-mk = []
-for i   in markets:
-    ix =  i['id']
-    if ix[-1] == 'P':
-        mk.append(ix)    
+
+# mk = []
+# for i   in markets:
+#     ix =  i['id']
+#     if ix[-1] == 'P':
+#         mk.append(ix)    
         
 col1, col2, col3  = st.columns([1, 1 , 1])
 
-p_data = mk[col1.number_input( 'p_data', 1 , len(mk) , 1)]
+p_data = Collateral[col1.number_input( 'p_data', 0 , len(Collateral) , 1)]
 timeframe   = col2.text_input('timeframe' , '4h')
 limit       = col3.number_input('limit', 1, 2000 , 1200)
 
