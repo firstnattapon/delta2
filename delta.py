@@ -142,9 +142,9 @@ markets = ex.fetch_markets()
         
 col1, col2, col3  = st.columns([1, 1 , 1])
 
-p_data = Collateral[col1.number_input( 'p_data', 0 , len(Collateral) , 1)]
+p_data = Collateral[col3.number_input( 'p_data', 0 , len(Collateral) , 1)]
 timeframe   = col2.text_input('timeframe' , '4h')
-limit       = col3.number_input('limit', 1, 2000 , 1200)
+limit       = col1.number_input('limit', 1, 2000 , 1200)
 
 x =  delta(p_data = '{}-PERP'.format(p_data) , timeframe = timeframe   , limit  = limit )
 dic  = x.cf()
